@@ -4,7 +4,7 @@ def check_on_dns():
         ["netsh", "interface", "ipv4", "show", "dnsservers"],
         capture_output=True,
         text=True,
-        encoding="utf-8"
+        encoding="CP866"
     )
 
     for line in result.stdout.splitlines():
