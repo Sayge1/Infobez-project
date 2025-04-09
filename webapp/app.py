@@ -23,6 +23,10 @@ from PySide6.QtWidgets import (
     QStatusBar,
 )
 from MainWindow import Ui_MainWindow
+from dns_interface import get_active_interface
+from dns import set_dns
+from check_on_dns import check_on_dns
+from sbros_dns import sbros_dns
 import test_rc
 
 client = vt.Client("acff4afdc1c74ab58501bb7eda32e2e66b38e6244391befefa9330c4a3661533")
@@ -33,10 +37,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setWindowTitle("Программа для ссылок")
         self.setupUi(self)
+        if check_on_dns():
+            self.pushButton_3.setChecked(True)
+            self.pushButton_3.setStyleSheet("background-color: green;")
+            self.pushButton_3.setText("Включено")
         self.textEdit.textChanged.connect(self.validate_url)
         self.textEdit_2.textChanged.connect(self.validate_url1)
         self.pushButton.clicked.connect(self.check_url)
         self.pushButton_2.clicked.connect(self.advanced_check_url)
+        self.pushButton_3.toggled.connect(self.dns_button)
         self.Set_simple.triggered.connect(self.set_simple_widget)
         self.Set_extended.triggered.connect(self.set_extended_widget)
         self.set_dns.triggered.connect(self.set_dns_widget)
@@ -101,8 +110,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.label_16.setText("Дата последней проверки: " + str(url.last_analysis_date))
         self.label_17.setText("Количество проверок: " + str(url.times_submitted))
         self.label_3.setText("Куда ведёт ссылка: " + str(url.last_final_url))
-
-
+    def dns_button(self, checked):
+        if checked:
+            set_dns(get_active_interface())
+            self.pushButton_3.setStyleSheet("background-color: green;")
+            self.pushButton_3.setText("Включено")
+        else:
+            sbros_dns(get_active_interface())
+            self.pushButton_3.setStyleSheet("background-color: red;")
+            self.pushButton_3.setText("Выключено")
 
 
 app = QApplication(sys.argv)

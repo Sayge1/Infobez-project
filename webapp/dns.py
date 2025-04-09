@@ -1,25 +1,11 @@
 import subprocess
+from dns_interface import get_active_interface
+def set_dns(active_interfaces):
+    primary_dns = "77.88.8.8"
+    for interface in active_interfaces:
+        result = subprocess.run(['netsh', 'interface', 'ipv4', 'set', 'dns', interface, 'static', primary_dns])
+        if result.returncode != 0:
+            print("gg")
+        else:
+            print("good")
 
-
-def set_dns(primary_dns, secondary_dns=None):
-    result = subprocess.run(['netsh', 'interface', 'ipv4', 'show', 'interfaces'], capture_output=True, text=True)
-    interfaces = result.stdout.splitlines()
-    active_interface = None
-    for line in interfaces:
-        if "Connected" in line:
-            active_interface = line.split()[-1]
-            break
-    if not active_interface:
-        return
-
-    if secondary_dns:
-        subprocess.run(['netsh', 'interface', 'ipv4', 'set', 'dns', f'name={active_interface}', 'static', primary_dns])
-        subprocess.run(
-            ['netsh', 'interface', 'ipv4', 'add', 'dns', f'name={active_interface}', secondary_dns, 'index=2'])
-    else:
-        subprocess.run(['netsh', 'interface', 'ipv4', 'set', 'dns', f'name={active_interface}', 'static', primary_dns])
-
-
-
-
-set_dns("77.88.8.88")

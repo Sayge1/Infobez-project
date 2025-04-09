@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="newPrefix">
     <file>плашка с названием.png</file>
+    <file>Без имени-1.png</file>
   </qresource>
 </RCC>

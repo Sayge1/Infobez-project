@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'reallyfinalversion.ui'
+## Form generated from reading UI file 'final_ib.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.1
+## Created by: Qt User Interface Compiler version 6.8.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -19,6 +19,7 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QMainWindow,
     QPushButton, QSizePolicy, QSpacerItem, QStackedWidget,
     QTextEdit, QToolBar, QVBoxLayout, QWidget)
+import test_rc
 import test_rc
 
 class Ui_MainWindow(object):
@@ -110,6 +111,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget = QStackedWidget(self.centralwidget)
         self.stackedWidget.setObjectName(u"stackedWidget")
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
@@ -366,28 +368,84 @@ class Ui_MainWindow(object):
         self.verticalLayout_4 = QVBoxLayout(self.page_3)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.verticalWidget1 = QWidget(self.page_3)
-        self.verticalWidget1.setObjectName(u"verticalWidget1")
-        self.verticalWidget1.setStyleSheet(u"QLabel {\n"
-"	color:black;\n"
-"    border-style: outset;\n"
-"    border-width: 2px;\n"
-"    border-radius: 10px;\n"
-"    border-color: beige;\n"
-"    font: bold 20px;\n"
-"    min-width: 10em;\n"
-"    padding: 6px;\n"
-"}")
-        self.verticalLayout_8 = QVBoxLayout(self.verticalWidget1)
+        self.widget_9 = QWidget(self.page_3)
+        self.widget_9.setObjectName(u"widget_9")
+        self.verticalLayout_8 = QVBoxLayout(self.widget_9)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.label_6 = QLabel(self.verticalWidget1)
+        self.verticalSpacer_3 = QSpacerItem(20, 15, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_8.addItem(self.verticalSpacer_3)
+
+        self.widget_10 = QWidget(self.widget_9)
+        self.widget_10.setObjectName(u"widget_10")
+        self.horizontalLayout_4 = QHBoxLayout(self.widget_10)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalSpacer_7 = QSpacerItem(277, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_7)
+
+        self.label_6 = QLabel(self.widget_10)
         self.label_6.setObjectName(u"label_6")
+        self.label_6.setMinimumSize(QSize(1, 1))
+        self.label_6.setPixmap(QPixmap(u":/newPrefix/\u0411\u0435\u0437 \u0438\u043c\u0435\u043d\u0438-1.png"))
+        self.label_6.setScaledContents(True)
 
-        self.verticalLayout_8.addWidget(self.label_6)
+        self.horizontalLayout_4.addWidget(self.label_6)
 
+        self.horizontalSpacer_8 = QSpacerItem(277, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.verticalLayout_4.addWidget(self.verticalWidget1)
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_8)
 
+        self.horizontalLayout_4.setStretch(0, 3)
+        self.horizontalLayout_4.setStretch(1, 7)
+        self.horizontalLayout_4.setStretch(2, 3)
+
+        self.verticalLayout_8.addWidget(self.widget_10)
+
+        self.verticalLayout_8.setStretch(0, 1)
+        self.verticalLayout_8.setStretch(1, 10)
+
+        self.verticalLayout_4.addWidget(self.widget_9)
+
+        self.widget_8 = QWidget(self.page_3)
+        self.widget_8.setObjectName(u"widget_8")
+        self.widget_8.setStyleSheet(u"QPushButton {\n"
+"	border-radius: 50%;\n"
+"	border: 2px solid #000000;\n"
+"	background-color: red;\n"
+"}")
+        self.horizontalLayout_3 = QHBoxLayout(self.widget_8)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_5)
+
+        self.pushButton_3 = QPushButton(self.widget_8)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.pushButton_3.setMinimumSize(QSize(200, 200))
+        self.pushButton_3.setStyleSheet(u"")
+        self.pushButton_3.setCheckable(True)
+
+        self.horizontalLayout_3.addWidget(self.pushButton_3)
+
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_6)
+
+        self.horizontalLayout_3.setStretch(0, 2)
+        self.horizontalLayout_3.setStretch(1, 1)
+        self.horizontalLayout_3.setStretch(2, 2)
+
+        self.verticalLayout_4.addWidget(self.widget_8)
+
+        self.widget_4 = QWidget(self.page_3)
+        self.widget_4.setObjectName(u"widget_4")
+
+        self.verticalLayout_4.addWidget(self.widget_4)
+
+        self.verticalLayout_4.setStretch(0, 3)
+        self.verticalLayout_4.setStretch(1, 3)
+        self.verticalLayout_4.setStretch(2, 3)
         self.stackedWidget.addWidget(self.page_3)
 
         self.verticalLayout_2.addWidget(self.stackedWidget)
@@ -403,7 +461,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -437,7 +495,8 @@ class Ui_MainWindow(object):
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt;\">\u0414\u0430\u0442\u0430 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0439 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438:</span></p></body></html>", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt;\">\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u0440\u043e\u0432\u0435\u0440\u043e\u043a:</span></p></body></html>", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt;\">\u041a\u0443\u0434\u0430 \u0432\u0435\u0434\u0451\u0442 \u0441\u0441\u044b\u043b\u043a\u0430:</span></p></body></html>", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:36pt;\">\u0420\u0430\u0437\u0434\u0435\u043b \u043d\u0430\u0445\u043e\u0434\u0438\u0442\u0441\u044f \u0432 \u0434\u043e\u0440\u0430\u0431\u043e\u0442\u043a\u0435</span></p></body></html>", None))
+        self.label_6.setText("")
+        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u043a\u043b\u044e\u0447\u0435\u043d\u043e", None))
         self.toolBar.setWindowTitle(QCoreApplication.translate("MainWindow", u"toolBar", None))
     # retranslateUi
 
