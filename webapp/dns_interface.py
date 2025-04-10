@@ -6,7 +6,7 @@ def get_active_interface():
         ["netsh", "interface", "show", "interface"],
         capture_output=True,
         text=True,
-        encoding="utf-8"
+        encoding="CP866"
     )
 
     if result.returncode != 0:
