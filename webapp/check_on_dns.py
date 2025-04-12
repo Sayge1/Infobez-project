@@ -1,5 +1,5 @@
 import subprocess
-subprocess.call("chcp 65001", shell=True)
+
 def check_on_dns():
     result = subprocess.run(
         ["netsh", "interface", "ipv4", "show", "dnsservers"],
@@ -7,7 +7,6 @@ def check_on_dns():
         text=True,
         encoding="utf-8"
     )
-
     for line in result.stdout.splitlines():
         if "77.88.8.8" in line:
             return True

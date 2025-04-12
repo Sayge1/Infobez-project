@@ -1,4 +1,3 @@
-import subprocess
 import sys
 import vt
 import validators
@@ -31,7 +30,7 @@ from sbros_dns import sbros_dns
 import subprocess
 import test_rc
 
-subprocess.call("chcp 65001", shell=True)
+
 client = vt.Client("acff4afdc1c74ab58501bb7eda32e2e66b38e6244391befefa9330c4a3661533")
 paint_red = ""
 
@@ -40,6 +39,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setWindowTitle("Программа для ссылок")
         self.setupUi(self)
+        subprocess.run(["chcp", "65001"], shell = True)
         if check_on_dns():
             self.pushButton_3.setChecked(True)
             self.pushButton_3.setStyleSheet("background-color: green;")

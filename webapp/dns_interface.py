@@ -1,5 +1,5 @@
 import subprocess
-subprocess.call("chcp 65001", shell=True)
+
 def get_active_interface():
     active_interfaces = []
     result = subprocess.run(
@@ -19,5 +19,4 @@ def get_active_interface():
                 active_interfaces.append(parts[-1])
                 active_interfaces.append(parts[-2] + " " + parts[-1])
                 active_interfaces.append(parts[-3] + " " + parts[-2] + " " + parts[-1])
-
     return active_interfaces
