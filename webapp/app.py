@@ -1,3 +1,4 @@
+import subprocess
 import sys
 import vt
 import validators
@@ -27,8 +28,10 @@ from dns_interface import get_active_interface
 from dns import set_dns
 from check_on_dns import check_on_dns
 from sbros_dns import sbros_dns
+import subprocess
 import test_rc
 
+subprocess.call("chcp 65001", shell=True)
 client = vt.Client("acff4afdc1c74ab58501bb7eda32e2e66b38e6244391befefa9330c4a3661533")
 paint_red = ""
 

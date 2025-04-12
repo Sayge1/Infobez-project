@@ -1,10 +1,11 @@
 import subprocess
+subprocess.call("chcp 65001", shell=True)
 def check_on_dns():
     result = subprocess.run(
         ["netsh", "interface", "ipv4", "show", "dnsservers"],
         capture_output=True,
         text=True,
-        encoding="CP866"
+        encoding="utf-8"
     )
 
     for line in result.stdout.splitlines():

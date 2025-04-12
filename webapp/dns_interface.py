@@ -1,12 +1,12 @@
 import subprocess
-
+subprocess.call("chcp 65001", shell=True)
 def get_active_interface():
     active_interfaces = []
     result = subprocess.run(
         ["netsh", "interface", "show", "interface"],
         capture_output=True,
         text=True,
-        encoding="CP866"
+        encoding="utf-8"
     )
 
     if result.returncode != 0:

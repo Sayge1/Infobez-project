@@ -4,8 +4,4 @@ def set_dns(active_interfaces):
     primary_dns = "77.88.8.8"
     for interface in active_interfaces:
         result = subprocess.run(['netsh', 'interface', 'ipv4', 'set', 'dns', interface, 'static', primary_dns])
-        if result.returncode != 0:
-            print("gg")
-        else:
-            print("good")
 
