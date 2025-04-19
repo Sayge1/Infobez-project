@@ -85,10 +85,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             self.label_2.setText("Безопасность ссылки(голоса пользователей): Недостаточно информации")
             self.label_2.setStyleSheet("background-color:#0d6efd;")
-        if url.last_analysis_stats["harmless"] > url.last_analysis_stats["malicious"] * 2 + url.last_analysis_stats["suspicious"]:
+        if url.last_analysis_stats["malicious"] * 2 + url.last_analysis_stats["suspicious"] < 4:
             self.label_4.setText("Безопасность ссылки(анализ): Безопасна")
             self.label_4.setStyleSheet("background-color:green;")
-        elif url.last_analysis_stats["harmless"] < url.last_analysis_stats["malicious"] * 2 + url.last_analysis_stats["suspicious"]:
+        elif url.last_analysis_stats["malicious"] * 2 + url.last_analysis_stats["suspicious"] > 4:
             self.label_4.setText("Безопасность ссылки(анализ): Опасна")
             self.label_4.setStyleSheet("background-color:red;")
         else:
